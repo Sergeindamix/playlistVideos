@@ -1,6 +1,7 @@
 from flask import Flask, render_template, Response
 from camera import VideoCamera
 from pyngrok import ngrok
+import os
 app = Flask(__name__)
 
 @app.route('/')
@@ -47,6 +48,8 @@ public_url = ngrok.connect(5000).public_url
 # Mostrar la URL en la consola
 print('El servidor Flask está disponible en la siguiente URL:')
 print(public_url + '/video_feed')
+print('El servidor Flask está disponible en la siguiente URL:')
+print(public_url + '/playlist')
 
 if __name__ == '__main__':
     app.run()
