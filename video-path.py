@@ -1,8 +1,6 @@
-!pip install flask opencv-python-headless
-from google.colab import drive
-drive.mount('/content/drive')
+from pyngrok import ngrok
 
-video_path = '/content/drive/MyDrive/Videos/1.mp4'
+video_path = '/content/drive/MyDrive/01/Videos/1.mp4'
 from flask import Flask, Response
 import cv2
 
