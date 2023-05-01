@@ -1,7 +1,6 @@
-!pip install flask-video-streaming
 from flask import Flask, render_template, Response
 from camera import VideoCamera
-
+from pyngrok import ngrok
 app = Flask(__name__)
 
 @app.route('/')
@@ -18,14 +17,14 @@ def gen(camera):
 app = Flask(__name__)
 @app.route('/playlist')
 def playlist():
-    video_dir = '/content/drive/MyDrive/Videos'
+    video_dir = '/content/drive/MyDrive/01/Videos'
     video_files = [f for f in os.listdir(video_dir) if f.endswith('.mp4')]
     playlist = '\n'.join([f'<a href="/play/{os.path.splitext(f)[0]}">{f}</a>' for f in video_files])
     return f'<html><body>{playlist}</body></html>'
 
 @app.route('/play/<string:video_id>')
 def play(video_id):
-    video_path = f'/content/drive/MyDrive/Videos/{video_id}.mp4'
+    video_path = f'/content/drive/MyDrive/01/Videos/{video_id}.mp4'
     return f'''
     <html>
         <body>
