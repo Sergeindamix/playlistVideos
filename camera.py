@@ -2,7 +2,7 @@ import cv2
 # Lista de videos
 import os
 
-video_dir = '/content/drive/MyDrive/Videos'
+video_dir = '/content/drive/MyDrive/01/Videos'
 video_files = [f for f in os.listdir(video_dir) if f.endswith('.mp4')]
 video_list = [os.path.join(video_dir, f) for f in video_files]
 print(video_list)
