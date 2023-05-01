@@ -1,15 +1,17 @@
 import os
+from flask import Flask, render_template, request
+from pyngrok import ngrok
 app = Flask(__name__)
 @app.route('/playlist')
 def playlist():
-    video_dir = '/content/drive/MyDrive/Videos'
+    video_dir = '/content/drive/MyDrive/01/Videos'
     video_files = [f for f in os.listdir(video_dir) if f.endswith('.mp4')]
     playlist = '\n'.join([f'<a href="/play/{f}">{f}</a>' for f in video_files])
     return f'<html><body>{playlist}</body></html>'
 
 @app.route('/play/<path:path>')
 def play(path):
-    video_path = os.path.join('/content/drive/MyDrive/Videos', path)
+    video_path = os.path.join('/content/drive/MyDrive/01/Videos', path)
     return f'''
     <html>
         <body>
