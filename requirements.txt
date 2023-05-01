@@ -1,0 +1,4 @@
+flask
+flask-video-streaming
+opencv-python-headless
+pyngrok
