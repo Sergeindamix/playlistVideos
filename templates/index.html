@@ -8,6 +8,11 @@
 	<video autoplay="true" id="video_player" width="640" height="480">
 		<source src="{{ url_for('video_feed') }}" type="multipart/x-mixed-replace; boundary=frame">
 	</video>
+	<audio controls>
+              <source src="{{ url_for('video_feed') }}" type="audio/mpeg">
+              <source src="audio.ogg" type="audio/ogg">
+              Your browser does not support the audio element.
+      	<audio controls>
 </body>
 </html>
 
