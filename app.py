@@ -22,7 +22,7 @@ def index():
     </body>
     </html>
     """ 
-    return html
+    return render_template('index.html')
 
 
 def gen(camera):
