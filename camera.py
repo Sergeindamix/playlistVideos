@@ -9,7 +9,7 @@ import base64
 VIDEO_DIR = '/content/drive/MyDrive/01/Videos'
 VIDEO_FILES = [f for f in os.listdir(VIDEO_DIR) if f.endswith('.mp4')]
 VIDEO_LIST = [os.path.join(VIDEO_DIR, f) for f in VIDEO_FILES]
-AUDIO_DIR = '/content/playlistVideos'
+AUDIO_DIR = '/content/playlistVideos/static'
 if not os.path.exists(AUDIO_DIR):
     os.mkdir(AUDIO_DIR)
     
