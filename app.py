@@ -2,11 +2,28 @@ from flask import Flask, render_template, Response
 from camera import VideoCamera
 from pyngrok import ngrok
 import os
-app = Flask(__name__)
+from IPython.display import HTML, display
 
+app = Flask(__name__)
 @app.route('/')
 def index():
-    return render_template('index.html')
+    html = """
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <title>My Generated HTML Page</title>
+    </head>
+    <body>
+      <audio controls>
+      {audio_html}<img src="data:image/jpeg;base64,{base64.b64encode(jpeg).decode()}">
+      <source src="audio.ogg" type="audio/ogg">
+      Your browser does not support the audio element.
+      <audio controls>
+    </body>
+    </html>
+    """ 
+    return html
+
 
 def gen(camera):
     while True:
@@ -15,7 +32,7 @@ def gen(camera):
             yield (b'--frame\r\n'
                    b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')
 
-app = Flask(__name__)
+
 @app.route('/playlist')
 def playlist():
     video_dir = '/content/drive/MyDrive/01/Videos'
