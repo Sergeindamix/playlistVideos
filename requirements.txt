@@ -1,3 +1,6 @@
 flask
 pyngrok
 pytube
+moviepy
+pyffmpeg
+pydub
