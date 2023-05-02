@@ -32,8 +32,8 @@ def index():
 public_url = ngrok.connect(5000).public_url
 
 # Mostrar la URL en la consola
-print('El servidor Flask está disponible en la siguiente URL:')
-print(public_url)
+print('El servidor Flask carpeta de videos en la siguiente URL:')
+print(public_url + '/video_feed')
 
 if __name__ == '__main__':
     app.run()
