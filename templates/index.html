@@ -1,1 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Video Stream</title>
+</head>
+<body>
+	<h1>Video Stream</h1>
+	<video autoplay="true" id="video_player" width="640" height="480">
+		<source src="{{ url_for('video_feed') }}" type="multipart/x-mixed-replace; boundary=frame">
+	</video>
+</body>
+</html>
 
